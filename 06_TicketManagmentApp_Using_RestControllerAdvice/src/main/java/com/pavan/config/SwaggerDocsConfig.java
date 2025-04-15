@@ -2,8 +2,10 @@ package com.pavan.config;
 
 import java.util.Collections;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
 import springfox.documentation.service.Contact;
@@ -15,10 +17,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class SwaggerDocsConfig {
 	
+	@Bean
 	public Docket createDocket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
 				.apis(RequestHandlerSelectors.basePackage("com.pavan.restcontroller"))
+				.paths(PathSelectors.regex("/api/tourist.*"))
 				.build()
 				.useDefaultResponseMessages(true)
 				.apiInfo(getApiInfo());
