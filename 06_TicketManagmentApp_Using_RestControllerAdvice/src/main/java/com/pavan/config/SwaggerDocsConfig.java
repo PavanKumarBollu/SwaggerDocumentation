@@ -1,5 +1,7 @@
 package com.pavan.config;
 
+import java.util.Collections;
+
 import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -24,7 +26,7 @@ public class SwaggerDocsConfig {
 
 	private ApiInfo getApiInfo() {
 		Contact contact = new Contact("Pavan", "www.linkedin.com/in/pavankumar0211", "bollupavankumar12@gmail.com");
-		return new ApiInfo("TouristAppInfo", null, null, null, null, null, null)
+		return new ApiInfo("TouristAppInfo", "Gives the Information about the Tourists", "3.4RELEASE", "", contact, "GNU PUBLIC", "http://apache.org/license/guru", Collections.emptyList());
 	}
 
 }
