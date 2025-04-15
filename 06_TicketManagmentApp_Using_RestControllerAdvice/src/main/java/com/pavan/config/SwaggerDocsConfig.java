@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.RequestHandlerSelectors;
 import springfox.documentation.service.ApiInfo;
+import springfox.documentation.service.Contact;
 import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
@@ -22,8 +23,8 @@ public class SwaggerDocsConfig {
 	}
 
 	private ApiInfo getApiInfo() {
-		// TODO Auto-generated method stub
-		return null;
+		Contact contact = new Contact("Pavan", "www.linkedin.com/in/pavankumar0211", "bollupavankumar12@gmail.com");
+		return new ApiInfo("TouristAppInfo", null, null, null, null, null, null)
 	}
 
 }
