@@ -16,12 +16,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Configuration
 @EnableSwagger2
 public class SwaggerDocsConfig {
-	
-	@Bean
-	public Docket createDocket() {
+
+    @Bean
+    Docket createDocket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("com.pavan.restcontroller"))
+				.apis(RequestHandlerSelectors.basePackage("com.pavan.com.pavan.restcontroller"))
 				.paths(PathSelectors.regex("/api/tourist.*"))
 				.build()
 				.useDefaultResponseMessages(true)
